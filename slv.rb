@@ -5,20 +5,20 @@
 class Slv < Formula
   desc ""
   homepage "https://github.com/amagimedia/slv-beta"
-  version "0.6.0"
+  version "0.7.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/amagimedia/slv-beta/releases/download/v0.6.0/slv_0.6.0_darwin_arm64.zip"
-      sha256 "c85d26656066605e63b6256f5fb30b22d21b8b81622ec6b6d8355e1f47524a3c"
+    if Hardware::CPU.intel?
+      url "https://github.com/amagimedia/slv-beta/releases/download/v0.7.0/slv_0.7.0_darwin_amd64.zip"
+      sha256 "c9bed67cb26870d538f5a37794af10985a5fae765bf358b2bf6bbc1796410a8b"
 
       def install
         bin.install "slv"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/amagimedia/slv-beta/releases/download/v0.6.0/slv_0.6.0_darwin_amd64.zip"
-      sha256 "0b7a18b437f638a54ecdebaaa2018a1110d907fd2c34c83c1153c34632a4a6db"
+    if Hardware::CPU.arm?
+      url "https://github.com/amagimedia/slv-beta/releases/download/v0.7.0/slv_0.7.0_darwin_arm64.zip"
+      sha256 "8ec248c778b849f339e9650829a173a43ea22d390fd86a60aa512131c0845d95"
 
       def install
         bin.install "slv"
@@ -27,17 +27,17 @@ class Slv < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/amagimedia/slv-beta/releases/download/v0.6.0/slv_0.6.0_linux_arm64.zip"
-      sha256 "5bf27f07560e6a86424004bd6063df4c599fb69b251b3875cf94eabdf0f0f0d0"
+    if Hardware::CPU.intel?
+      url "https://github.com/amagimedia/slv-beta/releases/download/v0.7.0/slv_0.7.0_linux_amd64.zip"
+      sha256 "799c8dd6690a18730c65bbb57911738b081d092f4242fa233a69ef123f957905"
 
       def install
         bin.install "slv"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/amagimedia/slv-beta/releases/download/v0.6.0/slv_0.6.0_linux_amd64.zip"
-      sha256 "bed936f20f9a736baf0c6c4df73ba5b06b87f363574c004220c232a8e967aa28"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/amagimedia/slv-beta/releases/download/v0.7.0/slv_0.7.0_linux_arm64.zip"
+      sha256 "fc134405154429d497beaeb0facb5dc1961132c8c51a81b491a09870fe371d07"
 
       def install
         bin.install "slv"
