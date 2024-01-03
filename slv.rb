@@ -5,20 +5,20 @@
 class Slv < Formula
   desc ""
   homepage "https://github.com/amagimedia/slv-beta"
-  version "0.7.0"
+  version "0.8.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/amagimedia/slv-beta/releases/download/v0.7.0/slv_0.7.0_darwin_amd64.zip"
-      sha256 "c9bed67cb26870d538f5a37794af10985a5fae765bf358b2bf6bbc1796410a8b"
+      url "https://github.com/amagimedia/slv-beta/releases/download/v0.8.0/slv_0.8.0_darwin_amd64.zip"
+      sha256 "7171605cdb1817e7b3b51bb1e7f54a451eceb60a6620e8dfaedc0499cf18db69"
 
       def install
         bin.install "slv"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/amagimedia/slv-beta/releases/download/v0.7.0/slv_0.7.0_darwin_arm64.zip"
-      sha256 "8ec248c778b849f339e9650829a173a43ea22d390fd86a60aa512131c0845d95"
+      url "https://github.com/amagimedia/slv-beta/releases/download/v0.8.0/slv_0.8.0_darwin_arm64.zip"
+      sha256 "7f68363a0ccb9895ce8b9d4f1831deb2cb35407c6ff104682f25215325aa12be"
 
       def install
         bin.install "slv"
@@ -27,17 +27,17 @@ class Slv < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/amagimedia/slv-beta/releases/download/v0.7.0/slv_0.7.0_linux_amd64.zip"
-      sha256 "799c8dd6690a18730c65bbb57911738b081d092f4242fa233a69ef123f957905"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/amagimedia/slv-beta/releases/download/v0.8.0/slv_0.8.0_linux_arm64.zip"
+      sha256 "d8fd61bd00079295cb297ff267ba96a7d5fe4c18d1a412b72ec268ae37bf170e"
 
       def install
         bin.install "slv"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/amagimedia/slv-beta/releases/download/v0.7.0/slv_0.7.0_linux_arm64.zip"
-      sha256 "fc134405154429d497beaeb0facb5dc1961132c8c51a81b491a09870fe371d07"
+    if Hardware::CPU.intel?
+      url "https://github.com/amagimedia/slv-beta/releases/download/v0.8.0/slv_0.8.0_linux_amd64.zip"
+      sha256 "aa2574cc3cb85e8f940e3132331ec32dc56d767773a6045cbaeb8bcd52c40f84"
 
       def install
         bin.install "slv"
